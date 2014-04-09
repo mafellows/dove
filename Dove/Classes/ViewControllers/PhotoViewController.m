@@ -9,6 +9,8 @@
 #import "PhotoViewController.h"
 #import "DOVECollectionViewCell.h"
 #import "PinItem.h"
+#import "JTSImageInfo.h"
+#import "JTSImageViewController.h"
 
 #define kCellIdentifier @"Cell"
 
@@ -84,7 +86,16 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        
+    DOVECollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    imageInfo.image = [self.images objectAtIndex:indexPath.row];
+    imageInfo.referenceRect = cell.frame;
+    imageInfo.referenceView = self.view;
+    
+    JTSImageViewController *imageViewController = [[JTSImageViewController alloc] initWithImageInfo:imageInfo
+                                                                                               mode:JTSImageViewControllerMode_Image
+                                                                                    backgroundStyle:JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred];
+    [imageViewController showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition]; 
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout

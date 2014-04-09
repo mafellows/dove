@@ -11,5 +11,7 @@
 @interface DOVECollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, weak) UIImageView *imageView;
+@property (nonatomic, weak) UILabel *label; 
+@property (nonatomic, assign) BOOL hidden;
 
 @end

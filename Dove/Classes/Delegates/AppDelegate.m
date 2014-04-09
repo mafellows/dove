@@ -32,6 +32,7 @@
     MFBaseNavigationController *twitterNav = [[MFBaseNavigationController alloc] initWithRootViewController:twitterViewController];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [UITabBar appearance].tintColor = [UIColor purpleColor];
     tabBarController.viewControllers = @[ gameNav, photoNav, instagramNav, twitterNav ];
     self.window.rootViewController = tabBarController; 
     self.window.backgroundColor = [UIColor whiteColor];

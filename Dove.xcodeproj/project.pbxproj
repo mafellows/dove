@@ -32,6 +32,14 @@
 		8F5115D418F5C14000C30542 /* instagram@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5115CE18F5C14000C30542 /* instagram@2x.png */; };
 		8F5115D518F5C14000C30542 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5115CF18F5C14000C30542 /* twitter.png */; };
 		8F5115D618F5C14000C30542 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5115D018F5C14000C30542 /* twitter@2x.png */; };
+		8F5115D918F5C2E100C30542 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5115D718F5C2E100C30542 /* trophy.png */; };
+		8F5115DA18F5C2E100C30542 /* trophy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5115D818F5C2E100C30542 /* trophy@2x.png */; };
+		8F5115E718F5CA3800C30542 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115DC18F5CA3800C30542 /* JTSAnimatedGIFUtility.m */; };
+		8F5115E818F5CA3800C30542 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115DE18F5CA3800C30542 /* JTSImageInfo.m */; };
+		8F5115E918F5CA3800C30542 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115E018F5CA3800C30542 /* JTSImageViewController.m */; };
+		8F5115EA18F5CA3800C30542 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115E218F5CA3800C30542 /* JTSSimpleImageDownloader.m */; };
+		8F5115EB18F5CA3800C30542 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115E418F5CA3800C30542 /* UIApplication+JTSImageViewController.m */; };
+		8F5115EC18F5CA3800C30542 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115E618F5CA3800C30542 /* UIImage+JTSImageEffects.m */; };
 		A3C63D18F013446FA314D4A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B213B681C304120A18D0D6B /* AppDelegate.m */; };
 		B100283A8E2E4045A1A352A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E422E15FB01C4EEAA9E08499 /* Foundation.framework */; };
 		D867040E66A349C5A99D0BD1 /* libPods-UnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D5951362AF48F18F038B48 /* libPods-UnitTests.a */; };
@@ -87,6 +95,20 @@
 		8F5115CE18F5C14000C30542 /* instagram@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "instagram@2x.png"; path = "Dove/Resources/images/instagram@2x.png"; sourceTree = "<group>"; };
 		8F5115CF18F5C14000C30542 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = Dove/Resources/images/twitter.png; sourceTree = "<group>"; };
 		8F5115D018F5C14000C30542 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "Dove/Resources/images/twitter@2x.png"; sourceTree = "<group>"; };
+		8F5115D718F5C2E100C30542 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trophy.png; path = Dove/Resources/images/trophy.png; sourceTree = "<group>"; };
+		8F5115D818F5C2E100C30542 /* trophy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trophy@2x.png"; path = "Dove/Resources/images/trophy@2x.png"; sourceTree = "<group>"; };
+		8F5115DB18F5CA3800C30542 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSAnimatedGIFUtility.h; path = Dove/Classes/JTSImageViewController/JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		8F5115DC18F5CA3800C30542 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSAnimatedGIFUtility.m; path = Dove/Classes/JTSImageViewController/JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		8F5115DD18F5CA3800C30542 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSImageInfo.h; path = Dove/Classes/JTSImageViewController/JTSImageInfo.h; sourceTree = "<group>"; };
+		8F5115DE18F5CA3800C30542 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSImageInfo.m; path = Dove/Classes/JTSImageViewController/JTSImageInfo.m; sourceTree = "<group>"; };
+		8F5115DF18F5CA3800C30542 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSImageViewController.h; path = Dove/Classes/JTSImageViewController/JTSImageViewController.h; sourceTree = "<group>"; };
+		8F5115E018F5CA3800C30542 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSImageViewController.m; path = Dove/Classes/JTSImageViewController/JTSImageViewController.m; sourceTree = "<group>"; };
+		8F5115E118F5CA3800C30542 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSSimpleImageDownloader.h; path = Dove/Classes/JTSImageViewController/JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		8F5115E218F5CA3800C30542 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSSimpleImageDownloader.m; path = Dove/Classes/JTSImageViewController/JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		8F5115E318F5CA3800C30542 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+JTSImageViewController.h"; path = "Dove/Classes/JTSImageViewController/UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		8F5115E418F5CA3800C30542 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+JTSImageViewController.m"; path = "Dove/Classes/JTSImageViewController/UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		8F5115E518F5CA3800C30542 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+JTSImageEffects.h"; path = "Dove/Classes/JTSImageViewController/UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		8F5115E618F5CA3800C30542 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+JTSImageEffects.m"; path = "Dove/Classes/JTSImageViewController/UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		956C93E6811349F9B88F2F38 /* Dove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4C91EE00B04F49895866DA /* Pods-UnitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.xcconfig"; path = "Pods/Pods-UnitTests.xcconfig"; sourceTree = "<group>"; };
 		9A9565DEBB4046BAAF244525 /* Dove-Prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Dove-Prefix.pch"; sourceTree = "<group>"; };
@@ -144,6 +166,8 @@
 		0947E7C3D3EB48BCABA288C1 = {
 			isa = PBXGroup;
 			children = (
+				8F5115D718F5C2E100C30542 /* trophy.png */,
+				8F5115D818F5C2E100C30542 /* trophy@2x.png */,
 				F7EF9CF595F14B8EA2BD24A6 /* Dove */,
 				68C75F1B34234F159618CCC2 /* UnitTests */,
 				1A29EE33014343E281E33289 /* Frameworks */,
@@ -284,6 +308,26 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		8F5115ED18F5CA4600C30542 /* JTSImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8F5115DB18F5CA3800C30542 /* JTSAnimatedGIFUtility.h */,
+				8F5115DC18F5CA3800C30542 /* JTSAnimatedGIFUtility.m */,
+				8F5115DD18F5CA3800C30542 /* JTSImageInfo.h */,
+				8F5115DE18F5CA3800C30542 /* JTSImageInfo.m */,
+				8F5115DF18F5CA3800C30542 /* JTSImageViewController.h */,
+				8F5115E018F5CA3800C30542 /* JTSImageViewController.m */,
+				8F5115E118F5CA3800C30542 /* JTSSimpleImageDownloader.h */,
+				8F5115E218F5CA3800C30542 /* JTSSimpleImageDownloader.m */,
+				8F5115E318F5CA3800C30542 /* UIApplication+JTSImageViewController.h */,
+				8F5115E418F5CA3800C30542 /* UIApplication+JTSImageViewController.m */,
+				8F5115E518F5CA3800C30542 /* UIImage+JTSImageEffects.h */,
+				8F5115E618F5CA3800C30542 /* UIImage+JTSImageEffects.m */,
+			);
+			name = JTSImageViewController;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		9F8D13565AE341F79FA8F9D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +340,7 @@
 		DCAD73949CA64DB69EA68C8F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8F5115ED18F5CA4600C30542 /* JTSImageViewController */,
 				72F3005826C64CD7BA735EF1 /* Controllers */,
 				00A7264BDE284B62B28023DE /* DataSources */,
 				1834E25B9A924D81A8F4C6BA /* Delegates */,
@@ -424,11 +469,13 @@
 				8F5115D618F5C14000C30542 /* twitter@2x.png in Resources */,
 				8F5115D118F5C14000C30542 /* board.png in Resources */,
 				8F5115C918F5951200C30542 /* dove-friend.png in Resources */,
+				8F5115DA18F5C2E100C30542 /* trophy@2x.png in Resources */,
 				8F5115D418F5C14000C30542 /* instagram@2x.png in Resources */,
 				8F5115A618F57C6D00C30542 /* game@2x.png in Resources */,
 				8F5115D518F5C14000C30542 /* twitter.png in Resources */,
 				8F5115D318F5C14000C30542 /* instagram.png in Resources */,
 				8F5115C718F5951200C30542 /* dove-beach.png in Resources */,
+				8F5115D918F5C2E100C30542 /* trophy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,14 +579,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5115B918F58ABE00C30542 /* DOVECollectionViewCell.m in Sources */,
+				8F5115E818F5CA3800C30542 /* JTSImageInfo.m in Sources */,
+				8F5115EC18F5CA3800C30542 /* UIImage+JTSImageEffects.m in Sources */,
+				8F5115E918F5CA3800C30542 /* JTSImageViewController.m in Sources */,
 				8F5115A218F5792C00C30542 /* MFBaseNavigationController.m in Sources */,
+				8F5115E718F5CA3800C30542 /* JTSAnimatedGIFUtility.m in Sources */,
 				A3C63D18F013446FA314D4A1 /* AppDelegate.m in Sources */,
 				8F5115C218F593F100C30542 /* PinItem.m in Sources */,
 				8F51159918F578A100C30542 /* PhotoViewController.m in Sources */,
+				8F5115EA18F5CA3800C30542 /* JTSSimpleImageDownloader.m in Sources */,
 				8F51159618F5787800C30542 /* GameViewController.m in Sources */,
 				38B3470E9E664CD681C97A8F /* main.m in Sources */,
 				8F51159F18F578CD00C30542 /* TwitterViewController.m in Sources */,
 				8F51159C18F578BD00C30542 /* InstagramViewController.m in Sources */,
+				8F5115EB18F5CA3800C30542 /* UIApplication+JTSImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

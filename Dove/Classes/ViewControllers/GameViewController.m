@@ -20,8 +20,17 @@
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"game"];
         self.navigationItem.title = @"Tap Tap Dove";
+        UIBarButtonItem *trophyButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"trophy"] style:UIBarButtonItemStylePlain target:self action:@selector(showAchievements:)];
+        self.navigationItem.rightBarButtonItem = trophyButton;
     }
     return self;
+}
+
+#pragma mark - Selector
+
+- (void)showAchievements:(id)sender
+{
+    // Show achievement view controller
 }
 
 @end
