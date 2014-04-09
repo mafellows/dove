@@ -10,6 +10,6 @@
 
 @interface DOVECollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, weak) UIImage *image; 
+@property (nonatomic, weak) UIImageView *imageView;
 
 @end

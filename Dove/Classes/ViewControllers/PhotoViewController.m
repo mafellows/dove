@@ -7,10 +7,13 @@
 //
 
 #import "PhotoViewController.h"
+#import "DOVECollectionViewCell.h"
+#import "PinItem.h"
+
+#define kCellIdentifier @"Cell"
 
 @interface PhotoViewController () <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
-@property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, copy) NSArray *images;
 
 @end
@@ -21,8 +24,13 @@
 {
     self = [super init];
     if (self) {
-        self.tabBarItem.title = @"Photo";
-        self.images = [NSArray array];
+        self.tabBarItem.image = [UIImage imageNamed:@"board"]; 
+        self.images = @[ [UIImage imageNamed:@"dove-beach"],
+                         [UIImage imageNamed:@"dove-family"],
+                         [UIImage imageNamed:@"dove-man"],
+                         [UIImage imageNamed:@"dove-friend"] ];
+        
+        self.navigationItem.title = @"Dove's Pin Board"; 
     }
     
     return self;
@@ -34,11 +42,15 @@
     backgroundView.backgroundColor = [UIColor whiteColor]; // FIXME: change color
     self.view = backgroundView;
     
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:backgroundView.frame];
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:backgroundView.frame collectionViewLayout:flowLayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
+    collectionView.backgroundColor = [UIColor clearColor];
+    [collectionView registerClass:[DOVECollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier];
     [backgroundView addSubview:collectionView];
-    self.collectionView = collectionView;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -55,21 +67,41 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    DOVECollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[DOVECollectionViewCell alloc] initWithFrame:CGRectMake(0, 0, kBLScreenWidth / 2, kBLScreenWidth / 2)];
+    }
     
+    PinItem *item = [[PinItem alloc] initWithImage:[self.images objectAtIndex:indexPath.row]
+                                           caption:@"Hello World"];
+    
+    cell.imageView.image = item.image;
+    
+    return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+        
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    return CGSizeMake(kBLScreenWidth / 2, kBLScreenWidth / 2);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0f;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0f;
 }
 
 @end

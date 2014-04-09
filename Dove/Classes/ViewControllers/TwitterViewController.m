@@ -18,7 +18,8 @@
 {
     self = [super init];
     if (self) {
-        self.tabBarItem.title = @"Twitter"; 
+        self.tabBarItem.image = [UIImage imageNamed:@"twitter"]; 
+        self.navigationItem.title = @"@DoveCameron on Twitter"; 
     }
 
     return self;

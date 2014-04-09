@@ -21,8 +21,8 @@
     {
         self.navigationBar.translucent = NO;
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]]; // button tint
-        [[UINavigationBar appearance] setBarTintColor:[UIColor lightGrayColor]];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
+        [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor purpleColor],
                                                                NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Light" size:18.0]}];
         
     }
@@ -34,7 +34,7 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 
 

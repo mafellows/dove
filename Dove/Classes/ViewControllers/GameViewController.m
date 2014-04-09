@@ -18,15 +18,10 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.tabBarItem.title = @"Game"; 
+        self.tabBarItem.image = [UIImage imageNamed:@"game"];
+        self.navigationItem.title = @"Tap Tap Dove";
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 @end

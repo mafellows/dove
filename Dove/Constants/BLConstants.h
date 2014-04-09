@@ -10,7 +10,3 @@
 #import "BLColorConstants.h"
 #import "BLSizeConstants.h"
 #import "BLNameConstants.h"
-
-// Parse
-#import <Parse/Parse.h>
-#import <FacebookSDK/FacebookSDK.h>

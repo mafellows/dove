@@ -14,12 +14,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImage *image = nil;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = image;
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kBLScreenWidth / 2, kBLScreenWidth / 2)];
         [self addSubview:imageView];
         
-        self.image = image;
+        self.imageView = imageView;
     }
     return self;
 }
