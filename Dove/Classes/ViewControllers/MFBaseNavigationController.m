@@ -20,7 +20,7 @@
     if (self)
     {
         self.navigationBar.translucent = NO;
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]]; // button tint
+        [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]]; // button tint
         [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor purpleColor],
                                                                NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Light" size:18.0]}];
