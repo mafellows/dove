@@ -14,6 +14,7 @@
 
 @property (nonatomic, assign) BOOL gameOver;
 @property (nonatomic, assign) NSInteger duration;
+@property (nonatomic, copy) NSArray *nodes;
 
 @end
 
@@ -41,9 +42,9 @@
 - (void)generateRandomNode
 {
     if (!self.gameOver) {
-        NSArray *nodes = [self allNodes];
-        NSUInteger randomNumber = arc4random() % nodes.count;
-        self.imageNode = [nodes objectAtIndex:randomNumber];
+        self.nodes = [self allNodes];
+        NSUInteger randomNumber = arc4random() % self.nodes.count;
+        self.imageNode = [self.nodes objectAtIndex:randomNumber];
         [self addChild:self.imageNode];
         
         SKAction *setTappable = [SKAction runBlock:^{
@@ -84,17 +85,41 @@
 {
     NSMutableArray *nodes = [NSMutableArray array];
     
-    SKSpriteNode *goodNode = [SKSpriteNode spriteNodeWithImageNamed:@"dove-friend"];
-    goodNode.name = @"good";
-    [nodes addObject:goodNode];
+    SKSpriteNode *goodNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-good-1"];
+    goodNode1.name = @"good";
+    [nodes addObject:goodNode1];
     
-    SKSpriteNode *badNode = [SKSpriteNode spriteNodeWithImageNamed:@"dove-man"];
-    badNode.name = @"bad";
-    [nodes addObject:badNode];
+    SKSpriteNode *goodNode2 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-good-2"];
+    goodNode2.name = @"good";
+    [nodes addObject:goodNode2];
     
-    SKSpriteNode *nothingNode = [SKSpriteNode spriteNodeWithImageNamed:@"twitter"];
-    nothingNode.name = @"nothing";
-    [nodes addObject:nothingNode];
+    SKSpriteNode *goodNode3 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-good-3"];
+    goodNode3.name = @"good";
+    [nodes addObject:goodNode3];
+    
+    SKSpriteNode *badNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-bad-1"];
+    badNode1.name = @"bad";
+    [nodes addObject:badNode1];
+    
+    SKSpriteNode *badNode2 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-bad-2"];
+    badNode2.name = @"bad";
+    [nodes addObject:badNode2];
+    
+    SKSpriteNode *badNode3 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-bad-3"];
+    badNode3.name = @"bad";
+    [nodes addObject:badNode3];
+    
+    SKSpriteNode *nothingNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"nothing"];
+    nothingNode1.name = @"nothing";
+    [nodes addObject:nothingNode1];
+    
+    SKSpriteNode *nothingNode2 = [SKSpriteNode spriteNodeWithImageNamed:@"nothing"];
+    nothingNode2.name = @"nothing";
+    [nodes addObject:nothingNode2];
+    
+    SKSpriteNode *nothingNode3 = [SKSpriteNode spriteNodeWithImageNamed:@"nothing"];
+    nothingNode3.name = @"nothing";
+    [nodes addObject:nothingNode3];
     
     return nodes;
 }

@@ -117,6 +117,7 @@
         
         DOVEScene *scene = [[DOVEScene alloc] initWithSize:tileView.frame.size];
         scene.scaleMode = UIViewContentModeScaleAspectFill;
+        scene.anchorPoint = CGPointMake(0.5, 0.5); 
         [tileView presentScene:scene];
     }
 }
@@ -141,7 +142,8 @@
 
 - (void)setDuration
 {
-    [[NSUserDefaults standardUserDefaults] setFloat:2.5 forKey:kDuration];
+    [[NSUserDefaults standardUserDefaults] setFloat:2.6
+                                             forKey:kDuration];
 }
 
 #pragma mark - Selector
