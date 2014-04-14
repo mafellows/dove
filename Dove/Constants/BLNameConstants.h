@@ -12,3 +12,9 @@
 #define kUserLongitudeKey @"userLongitude"
 
 #define kUserDistanceToDealsKey @"queryDistance"
+#define kUserScoreKey @"score"
+#define kIncrementScore @"incrementScore"
+#define kRemoveLife @"removeLife"
+#define kTappable @"tappable"
+#define kGameOver @"gameOver"
+#define kResetGame @"resetGame"

@@ -8,6 +8,7 @@ pod 'MBProgressHUD', '~> 0.8'
 pod 'NSDate+TimeAgo'
 pod 'JazzHands'
 pod 'SAMCircleProgressView'
+pod 'SAMGradientView'
 
 
 target :UnitTests, :exclusive => true do

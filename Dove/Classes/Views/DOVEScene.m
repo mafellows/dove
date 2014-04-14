@@ -11,8 +11,6 @@
 @interface DOVEScene ()
 
 @property (nonatomic, assign) BOOL gameOver;
-@property (nonatomic, assign) NSInteger lives;
-@property (nonatomic, assign) NSInteger points;
 
 @end
 
@@ -23,8 +21,8 @@
     self = [super initWithSize:size];
     if (self) {
         self.gameOver = NO;
-        self.lives = 3;
-        self.points = 0;
+        self.userData = [NSMutableDictionary dictionary];
+        [self registerNotifications];
     }
     return self;
 }
@@ -42,14 +40,19 @@
         NSUInteger randomNumber = arc4random() % nodes.count;
         self.imageNode = [nodes objectAtIndex:randomNumber];
         [self addChild:self.imageNode];
-        SKAction *fadeOut = [SKAction fadeAlphaTo:0.0f duration:0.1];
         
-        [self.imageNode runAction:fadeOut completion:^{
-            sleep(1); 
+        SKAction *setTappable = [SKAction runBlock:^{
+            [self.userData setObject:@1 forKey:kTappable];
+        }];
+        
+        SKAction *wait = [SKAction waitForDuration:0.8];
+        
+        SKAction *fadeOut = [SKAction fadeAlphaTo:0.0f duration:0.2];
+        
+        SKAction *sequence = [SKAction sequence:@[ setTappable, wait, fadeOut ]];
+        [self.imageNode runAction:sequence completion:^{
             [self generateRandomNode];
         }];
-    } else {
-        [self resetGame];
     }
 }
 
@@ -57,13 +60,15 @@
 {
     UITouch *touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInNode:self];
+    BOOL tappable = [[self.userData objectForKey:kTappable] boolValue];
     
     SKNode *node = [self nodeAtPoint:touchLocation];
-    if ([node.name isEqualToString:@"good"]) {
-        self.points += 10;
-        NSLog(@"%d", self.points);
-    } else if ([node.name isEqualToString:@"bad"]) {
+    if ([node.name isEqualToString:@"good"] && tappable) {
+        [self incrementScore];
+        [self makeUntappable];
+    } else if ([node.name isEqualToString:@"bad"] && tappable) {
         [self removeLife];
+        [self makeUntappable];
     }
 }
 
@@ -86,18 +91,65 @@
     return nodes;
 }
 
-- (void)resetGame
+#pragma mark - Helpers
+
+- (void)incrementScore
 {
-    self.lives = 3;
-    self.gameOver = NO;
+    self.imageNode.color = [UIColor greenColor];
+    self.imageNode.colorBlendFactor = 0.5;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kIncrementScore
+                                                        object:self];
 }
 
 - (void)removeLife
 {
-    self.lives -= 1;
-    if (self.lives <= 0) {
+    self.imageNode.color = [UIColor redColor];
+    self.imageNode.colorBlendFactor = 0.5;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRemoveLife
+                                                        object:self];
+}
+
+- (void)makeUntappable
+{
+    [self.userData setObject:@0
+                      forKey:kTappable];
+}
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kGameOver
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(gameOver:)
+                                                 name:kGameOver
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kResetGame
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resetGame:)
+                                                 name:kResetGame
+                                               object:nil];
+}
+
+#pragma mark - Selectors
+
+- (void)gameOver:(NSNotification *)notificaiton
+{
+    if ([[notificaiton name] isEqualToString:kGameOver]) {
         self.gameOver = YES;
-        NSLog(@"Game Over. Here's your score: %d", self.points);
+    }
+}
+
+- (void)resetGame:(NSNotification *)notification
+{
+    if ([[notification name] isEqualToString:kResetGame]) {
+        self.gameOver = NO;
+        [self generateRandomNode]; // FIXME: Needed? 
     }
 }
 

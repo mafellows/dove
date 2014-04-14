@@ -42,6 +42,8 @@
 		8F5115F118F5CF2C00C30542 /* trophy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5115EF18F5CF2C00C30542 /* trophy@2x.png */; };
 		8F5115F518F5CFA700C30542 /* GameSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115F418F5CFA700C30542 /* GameSpec.m */; };
 		8F5115F818F5D03C00C30542 /* DOVETileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115F718F5D03C00C30542 /* DOVETileView.m */; };
+		8F971B5718FC41EE001D05CF /* ResetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F971B5618FC41EE001D05CF /* ResetView.m */; };
+		8F971B5A18FC4C26001D05CF /* AchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F971B5918FC4C26001D05CF /* AchievementViewController.m */; };
 		8FCDDB8118F8622D00309E43 /* DOVEScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDDB8018F8622D00309E43 /* DOVEScene.m */; };
 		A3C63D18F013446FA314D4A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B213B681C304120A18D0D6B /* AppDelegate.m */; };
 		B100283A8E2E4045A1A352A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E422E15FB01C4EEAA9E08499 /* Foundation.framework */; };
@@ -115,6 +117,10 @@
 		8F5115F418F5CFA700C30542 /* GameSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSpec.m; sourceTree = "<group>"; };
 		8F5115F618F5D03C00C30542 /* DOVETileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOVETileView.h; sourceTree = "<group>"; };
 		8F5115F718F5D03C00C30542 /* DOVETileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOVETileView.m; sourceTree = "<group>"; };
+		8F971B5518FC41EE001D05CF /* ResetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetView.h; sourceTree = "<group>"; };
+		8F971B5618FC41EE001D05CF /* ResetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetView.m; sourceTree = "<group>"; };
+		8F971B5818FC4C26001D05CF /* AchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementViewController.h; sourceTree = "<group>"; };
+		8F971B5918FC4C26001D05CF /* AchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementViewController.m; sourceTree = "<group>"; };
 		8FCDDB7F18F8622D00309E43 /* DOVEScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOVEScene.h; sourceTree = "<group>"; };
 		8FCDDB8018F8622D00309E43 /* DOVEScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOVEScene.m; sourceTree = "<group>"; };
 		956C93E6811349F9B88F2F38 /* Dove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dove.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +235,8 @@
 		3607327DAAD84D26A3670694 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8F971B5818FC4C26001D05CF /* AchievementViewController.h */,
+				8F971B5918FC4C26001D05CF /* AchievementViewController.m */,
 				8F5115A018F5792C00C30542 /* MFBaseNavigationController.h */,
 				8F5115A118F5792C00C30542 /* MFBaseNavigationController.m */,
 				8F51159D18F578CD00C30542 /* TwitterViewController.h */,
@@ -246,6 +254,8 @@
 		5048C0B9AAF04AFF9326F03B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F971B5518FC41EE001D05CF /* ResetView.h */,
+				8F971B5618FC41EE001D05CF /* ResetView.m */,
 				8FCDDB7F18F8622D00309E43 /* DOVEScene.h */,
 				8FCDDB8018F8622D00309E43 /* DOVEScene.m */,
 				8F5115F618F5D03C00C30542 /* DOVETileView.h */,
@@ -601,6 +611,7 @@
 				8F5115A218F5792C00C30542 /* MFBaseNavigationController.m in Sources */,
 				8F5115E718F5CA3800C30542 /* JTSAnimatedGIFUtility.m in Sources */,
 				A3C63D18F013446FA314D4A1 /* AppDelegate.m in Sources */,
+				8F971B5718FC41EE001D05CF /* ResetView.m in Sources */,
 				8F5115C218F593F100C30542 /* PinItem.m in Sources */,
 				8F51159918F578A100C30542 /* PhotoViewController.m in Sources */,
 				8F5115EA18F5CA3800C30542 /* JTSSimpleImageDownloader.m in Sources */,
@@ -609,6 +620,7 @@
 				38B3470E9E664CD681C97A8F /* main.m in Sources */,
 				8F51159F18F578CD00C30542 /* TwitterViewController.m in Sources */,
 				8F51159C18F578BD00C30542 /* InstagramViewController.m in Sources */,
+				8F971B5A18FC4C26001D05CF /* AchievementViewController.m in Sources */,
 				8F5115EB18F5CA3800C30542 /* UIApplication+JTSImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

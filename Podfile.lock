@@ -11,6 +11,7 @@ PODS:
   - NSDate+TimeAgo (1.0.3)
   - OCMock (2.2.3)
   - SAMCircleProgressView (0.1.1)
+  - SAMGradientView (0.2.1)
 
 DEPENDENCIES:
   - JazzHands
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - NSDate+TimeAgo
   - OCMock
   - SAMCircleProgressView
+  - SAMGradientView
 
 SPEC CHECKSUMS:
   JazzHands: 9069a8ec67495c8ace35238dad19fdeaa58716cf
@@ -31,5 +33,6 @@ SPEC CHECKSUMS:
   NSDate+TimeAgo: ca09306750ac2564418042aa10cf8365c36d2cee
   OCMock: ea7fe30ee99e4e3186ad47d032a301fa7e8793ec
   SAMCircleProgressView: 2da5c92b83e71f4ca587fa8128e5cf87d76c36c4
+  SAMGradientView: ab5543a14a69ecf5fc10239091740291c50b328c
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.31.1
