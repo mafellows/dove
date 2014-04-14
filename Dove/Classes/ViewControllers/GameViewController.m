@@ -16,6 +16,7 @@
 
 @interface GameViewController () {
     CGFloat _padding;
+    int secondsCount;
 }
 
 @property (nonatomic, copy) NSArray *images;
@@ -56,6 +57,8 @@
     [self addCircleViews];
     [self registerNotifications];
     [self addLabels];
+    [self setDuration];
+    [self setUpTimer];
 }
 
 #pragma mark - Notifications
@@ -81,6 +84,16 @@
 }
 
 #pragma mark - Helper
+
+- (void)setUpTimer
+{
+    secondsCount = 1800;
+    [NSTimer scheduledTimerWithTimeInterval:10.0
+                                     target:self
+                                   selector:@selector(runTimer:)
+                                   userInfo:nil
+                                    repeats:YES];
+}
 
 - (void)addCircleViews
 {
@@ -124,6 +137,11 @@
     livesLabel.textAlignment = NSTextAlignmentRight;
     [self.view addSubview:livesLabel];
     self.livesLabel = livesLabel;
+}
+
+- (void)setDuration
+{
+    [[NSUserDefaults standardUserDefaults] setFloat:2.5 forKey:kDuration];
 }
 
 #pragma mark - Selector
@@ -175,11 +193,23 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kResetGame
                                                         object:self];
     [self.resetView removeFromSuperview];
+    [self setDuration];
     
     self.lives = 3;
     self.points = 0;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.points];
     self.livesLabel.text = [NSString stringWithFormat:@"Lives: %d", self.lives];
+}
+
+- (void)runTimer:(NSTimer *)timer
+{
+    secondsCount -= 10;
+    CGFloat duration = [[NSUserDefaults standardUserDefaults] floatForKey:kDuration];
+    NSLog(@"%f", duration);
+    if (duration > 0.2) {
+        duration -= 0.2;
+        [[NSUserDefaults standardUserDefaults] setFloat:duration forKey:kDuration];
+    }
 }
 
 @end

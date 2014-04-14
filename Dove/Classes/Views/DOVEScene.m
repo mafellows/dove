@@ -8,7 +8,9 @@
 
 #import "DOVEScene.h"
 
-@interface DOVEScene ()
+@interface DOVEScene () {
+    int secondsCount;
+}
 
 @property (nonatomic, assign) BOOL gameOver;
 @property (nonatomic, assign) NSInteger duration;
@@ -21,11 +23,12 @@
 {
     self = [super initWithSize:size];
     if (self) {
-        self.duration = 2.5;
         self.gameOver = NO;
         self.userData = [NSMutableDictionary dictionary];
         [self registerNotifications];
-    }
+        secondsCount = 1800;
+}
+    
     return self;
 }
 
@@ -46,6 +49,8 @@
         SKAction *setTappable = [SKAction runBlock:^{
             [self.userData setObject:@1 forKey:kTappable];
         }];
+        
+        self.duration = [[NSUserDefaults standardUserDefaults] integerForKey:kDuration];
         
         SKAction *begin = [SKAction waitForDuration:0.1 withRange:1.0];
         SKAction *fadeIn = [SKAction fadeInWithDuration:0.2];

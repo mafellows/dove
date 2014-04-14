@@ -19,3 +19,4 @@
 #define kGameOver @"gameOver"
 #define kResetGame @"resetGame"
 #define kHighScore @"highScore"
+#define kDuration @"duration"
