@@ -14,27 +14,24 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.hidden = YES;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kBLScreenWidth / 2, kBLScreenWidth / 2)];
         [self addSubview:imageView];
         
-        UIView *tintview = [[UIView alloc] initWithFrame:imageView.bounds];
+        UIView *tintview = [[UIView alloc] initWithFrame:CGRectMake(0, 140, frame.size.width, frame.size.height - 140)];
         tintview.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
         [imageView addSubview:tintview];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:tintview.bounds];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 0.0f, frame.size.width - 10.0f, tintview.frame.size.height)]   ;
         label.numberOfLines = 2;
-        label.font = [UIFont fontWithName:@"Helvetica-Light" size:18.0f];
+        label.font = [UIFont fontWithName:@"Helvetica-Light" size:12.0f];
         label.textColor = [UIColor whiteColor];
         label.text = @"Test";
         [tintview addSubview:label];
-        
-        
-        
-        tintview.hidden = self.hidden;
         self.imageView = imageView;
+        self.label = label;
     }
+
     return self;
 }
 

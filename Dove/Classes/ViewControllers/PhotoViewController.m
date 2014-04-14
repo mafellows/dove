@@ -17,6 +17,7 @@
 @interface PhotoViewController () <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property (nonatomic, copy) NSArray *images;
+@property (nonatomic, copy) NSArray *captions;
 
 @end
 
@@ -30,7 +31,16 @@
         self.images = @[ [UIImage imageNamed:@"dove-beach"],
                          [UIImage imageNamed:@"dove-family"],
                          [UIImage imageNamed:@"dove-man"],
-                         [UIImage imageNamed:@"dove-friend"] ];
+                         [UIImage imageNamed:@"dove-friend"],
+                         [UIImage imageNamed:@"dove-friend-beach"],
+                         [UIImage imageNamed:@"dove-tape"] ];
+        
+        self.captions = @[ @"Fun beach shoot :)",
+                           @"Check out this new scene!",
+                           @"Lucky girl",
+                           @"Friends > everything",
+                           @"Beach + Friends",
+                           @"I love this picture..." ];
         
         self.navigationItem.title = @"Dove's Pin Board"; 
     }
@@ -41,7 +51,7 @@
 - (void)loadView
 {
     UIView *backgroundView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    backgroundView.backgroundColor = [UIColor whiteColor]; // FIXME: change color
+
     self.view = backgroundView;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -75,9 +85,10 @@
     }
     
     PinItem *item = [[PinItem alloc] initWithImage:[self.images objectAtIndex:indexPath.row]
-                                           caption:@"Hello World"];
+                                           caption:[self.captions objectAtIndex:indexPath.row]];
     
     cell.imageView.image = item.image;
+    cell.label.text = item.caption; 
     
     return cell;
 }
@@ -96,6 +107,11 @@
                                                                                                mode:JTSImageViewControllerMode_Image
                                                                                     backgroundStyle:JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred];
     [imageViewController showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition]; 
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 100.0f, 0); 
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
