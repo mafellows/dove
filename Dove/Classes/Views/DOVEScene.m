@@ -11,6 +11,7 @@
 @interface DOVEScene ()
 
 @property (nonatomic, assign) BOOL gameOver;
+@property (nonatomic, assign) NSInteger duration;
 
 @end
 
@@ -20,6 +21,7 @@
 {
     self = [super initWithSize:size];
     if (self) {
+        self.duration = 2.5;
         self.gameOver = NO;
         self.userData = [NSMutableDictionary dictionary];
         [self registerNotifications];
@@ -45,11 +47,12 @@
             [self.userData setObject:@1 forKey:kTappable];
         }];
         
-        SKAction *wait = [SKAction waitForDuration:0.8];
+        SKAction *begin = [SKAction waitForDuration:0.1 withRange:1.0];
+        SKAction *fadeIn = [SKAction fadeInWithDuration:0.2];
+        SKAction *wait = [SKAction waitForDuration:self.duration];
+        SKAction *fadeOut = [SKAction fadeOutWithDuration:0.2];
         
-        SKAction *fadeOut = [SKAction fadeAlphaTo:0.0f duration:0.2];
-        
-        SKAction *sequence = [SKAction sequence:@[ setTappable, wait, fadeOut ]];
+        SKAction *sequence = [SKAction sequence:@[ begin, setTappable, fadeIn, wait, fadeOut ]];
         [self.imageNode runAction:sequence completion:^{
             [self generateRandomNode];
         }];
@@ -149,7 +152,7 @@
 {
     if ([[notification name] isEqualToString:kResetGame]) {
         self.gameOver = NO;
-        [self generateRandomNode]; // FIXME: Needed? 
+        [self generateRandomNode];
     }
 }
 

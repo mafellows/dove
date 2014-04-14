@@ -44,6 +44,8 @@
 		8F5115F818F5D03C00C30542 /* DOVETileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5115F718F5D03C00C30542 /* DOVETileView.m */; };
 		8F971B5718FC41EE001D05CF /* ResetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F971B5618FC41EE001D05CF /* ResetView.m */; };
 		8F971B5A18FC4C26001D05CF /* AchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F971B5918FC4C26001D05CF /* AchievementViewController.m */; };
+		8F971B5D18FC5619001D05CF /* x-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F971B5B18FC5619001D05CF /* x-circle.png */; };
+		8F971B5E18FC5619001D05CF /* x-circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F971B5C18FC5619001D05CF /* x-circle@2x.png */; };
 		8FCDDB8118F8622D00309E43 /* DOVEScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDDB8018F8622D00309E43 /* DOVEScene.m */; };
 		A3C63D18F013446FA314D4A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B213B681C304120A18D0D6B /* AppDelegate.m */; };
 		B100283A8E2E4045A1A352A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E422E15FB01C4EEAA9E08499 /* Foundation.framework */; };
@@ -121,6 +123,8 @@
 		8F971B5618FC41EE001D05CF /* ResetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetView.m; sourceTree = "<group>"; };
 		8F971B5818FC4C26001D05CF /* AchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementViewController.h; sourceTree = "<group>"; };
 		8F971B5918FC4C26001D05CF /* AchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementViewController.m; sourceTree = "<group>"; };
+		8F971B5B18FC5619001D05CF /* x-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-circle.png"; sourceTree = "<group>"; };
+		8F971B5C18FC5619001D05CF /* x-circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-circle@2x.png"; sourceTree = "<group>"; };
 		8FCDDB7F18F8622D00309E43 /* DOVEScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOVEScene.h; sourceTree = "<group>"; };
 		8FCDDB8018F8622D00309E43 /* DOVEScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOVEScene.m; sourceTree = "<group>"; };
 		956C93E6811349F9B88F2F38 /* Dove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dove.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +318,8 @@
 		8F5115A718F57C7100C30542 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8F971B5B18FC5619001D05CF /* x-circle.png */,
+				8F971B5C18FC5619001D05CF /* x-circle@2x.png */,
 				8F5115EE18F5CF2C00C30542 /* trophy.png */,
 				8F5115EF18F5CF2C00C30542 /* trophy@2x.png */,
 				8F5115CB18F5C14000C30542 /* board.png */,
@@ -491,10 +497,12 @@
 				8F5115D218F5C14000C30542 /* board@2x.png in Resources */,
 				8F5115A518F57C6D00C30542 /* game.png in Resources */,
 				8F5115D618F5C14000C30542 /* twitter@2x.png in Resources */,
+				8F971B5D18FC5619001D05CF /* x-circle.png in Resources */,
 				8F5115D118F5C14000C30542 /* board.png in Resources */,
 				8F5115C918F5951200C30542 /* dove-friend.png in Resources */,
 				8F5115F118F5CF2C00C30542 /* trophy@2x.png in Resources */,
 				8F5115D418F5C14000C30542 /* instagram@2x.png in Resources */,
+				8F971B5E18FC5619001D05CF /* x-circle@2x.png in Resources */,
 				8F5115A618F57C6D00C30542 /* game@2x.png in Resources */,
 				8F5115D518F5C14000C30542 /* twitter.png in Resources */,
 				8F5115D318F5C14000C30542 /* instagram.png in Resources */,

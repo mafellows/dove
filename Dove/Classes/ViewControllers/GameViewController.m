@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "AchievementViewController.h"
 #import "DOVETileView.h"
 #import "DOVEScene.h"
 #import "ResetView.h"
@@ -43,7 +44,7 @@
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:self
                                                                           action:@selector(showAchievements:)];
-        self.navigationItem.rightBarButtonItem = rightBarButton; 
+        self.navigationItem.rightBarButtonItem = rightBarButton;
     }
     return self;
 }
@@ -129,7 +130,10 @@
 
 - (void)showAchievements:(id)sender
 {
-    // Show achievement view controller
+    AchievementViewController *achievementVC = [[AchievementViewController alloc] init];
+    [self presentViewController:achievementVC
+                       animated:YES
+                     completion:nil];
 }
 
 - (void)incrementScore:(NSNotification *)notification
@@ -161,9 +165,17 @@
 
 - (void)resetGame:(id)sender
 {
+    NSInteger highScore = [[NSUserDefaults standardUserDefaults] integerForKey:kHighScore];
+    
+    if (self.points > highScore) {
+        [[NSUserDefaults standardUserDefaults] setInteger:self.points
+                                                   forKey:kHighScore];
+    }
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kResetGame
                                                         object:self];
     [self.resetView removeFromSuperview];
+    
     self.lives = 3;
     self.points = 0;
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.points];

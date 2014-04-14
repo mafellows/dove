@@ -18,3 +18,4 @@
 #define kTappable @"tappable"
 #define kGameOver @"gameOver"
 #define kResetGame @"resetGame"
+#define kHighScore @"highScore"
