@@ -13,7 +13,6 @@
 }
 
 @property (nonatomic, assign) BOOL gameOver;
-@property (nonatomic, assign) BOOL paused;
 @property (nonatomic, assign) NSInteger duration;
 @property (nonatomic, copy) NSArray *nodes;
 
@@ -26,7 +25,6 @@
     self = [super initWithSize:size];
     if (self) {
         self.gameOver = NO;
-        self.paused = YES; 
         self.userData = [NSMutableDictionary dictionary];
         [self registerNotifications];
         secondsCount = 1800;
@@ -43,7 +41,7 @@
 
 - (void)generateRandomNode
 {
-    if (!self.gameOver || !self.paused) {
+    if (!self.gameOver) {
         self.nodes = [self allNodes];
         NSUInteger randomNumber = arc4random() % self.nodes.count;
         self.imageNode = [self.nodes objectAtIndex:randomNumber];
@@ -136,6 +134,7 @@
 {
     self.imageNode.color = [UIColor redColor];
     self.imageNode.colorBlendFactor = 0.5;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kRemoveLife
                                                         object:self];
 }

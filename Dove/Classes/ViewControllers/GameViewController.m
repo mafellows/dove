@@ -12,6 +12,7 @@
 #import "DOVETileView.h"
 #import "DOVEScene.h"
 #import "ResetView.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 #define kTileDiameter 100.0f
 
@@ -26,7 +27,7 @@
 @property (nonatomic, assign) NSInteger lives;
 @property (nonatomic, weak) UILabel *scoreLabel;
 @property (nonatomic, weak) UILabel *livesLabel;
-@property (nonatomic, weak) ResetView *resetView;
+@property (nonatomic, strong) ResetView *resetView;
 
 @end
 
@@ -56,6 +57,11 @@
         
     }
     return self;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self gameOver];
 }
 
 - (void)viewDidLoad
@@ -200,18 +206,11 @@
 - (void)removeLife:(NSNotification *)notification
 {
     if ([[notification name] isEqualToString:kRemoveLife]) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate); 
         self.lives -= 1;
         self.livesLabel.text = [NSString stringWithFormat:@"Lives: %d", self.lives];
         if (self.lives <= 0) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kGameOver
-                                                                object:self];
-            ResetView *resetView = [[ResetView alloc] initWithFrame:self.view.bounds];
-            [resetView.resetButton addTarget:self
-                                      action:@selector(resetGame:)
-                            forControlEvents:UIControlEventTouchUpInside];
-            [self.view addSubview:resetView];
-            [self.view bringSubviewToFront:resetView];
-            self.resetView = resetView;
+            [self gameOver];
         }
     }
 }
@@ -245,6 +244,19 @@
         duration -= 0.2;
         [[NSUserDefaults standardUserDefaults] setFloat:duration forKey:kDuration];
     }
+}
+
+- (void)gameOver
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kGameOver
+                                                        object:self];
+    [self.resetView removeFromSuperview];
+    self.resetView = [[ResetView alloc] initWithFrame:self.view.bounds];
+    [self.resetView.resetButton addTarget:self
+                                   action:@selector(resetGame:)
+                         forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.resetView];
+    [self.view bringSubviewToFront:self.resetView];
 }
 
 - (void)pauseGame:(NSNotification *)notification
