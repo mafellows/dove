@@ -28,19 +28,15 @@
     self = [super init];
     if (self) {
         self.tabBarItem.image = [UIImage imageNamed:@"board"]; 
-        self.images = @[ [UIImage imageNamed:@"dove-beach"],
+        self.images = @[ [UIImage imageNamed:@"dove-board-emmy"],
                          [UIImage imageNamed:@"dove-family"],
-                         [UIImage imageNamed:@"dove-man"],
-                         [UIImage imageNamed:@"dove-friend"],
-                         [UIImage imageNamed:@"dove-friend-beach"],
-                         [UIImage imageNamed:@"dove-tape"] ];
+                         [UIImage imageNamed:@"dove-board-man"],
+                         [UIImage imageNamed:@"dove-board-ryan"] ];
         
-        self.captions = @[ @"Fun beach shoot :)",
+        self.captions = @[ @"Love friends and doubles :)",
                            @"Check out this new scene!",
-                           @"Lucky girl",
-                           @"Friends > everything",
-                           @"Beach + Friends",
-                           @"I love this picture..." ];
+                           @"Love of my life",
+                           @"Amazing opening night with an amazing guy :)" ];
         
         self.navigationItem.title = @"Dove's Pin Board"; 
     }
@@ -63,6 +59,12 @@
     collectionView.backgroundColor = [UIColor clearColor];
     [collectionView registerClass:[DOVECollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier];
     [backgroundView addSubview:collectionView];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
 }
 
 #pragma mark - UICollectionViewDataSource

@@ -31,7 +31,7 @@
         CGFloat y = labelHeight + padding;
         CGFloat tilePadding = 10.0f;
         CGFloat tileWidth = 100.0f;
-        NSArray *images = @[ [UIImage imageNamed:@"dove-good-1"], [UIImage imageNamed:@"dove-good-2"], [UIImage imageNamed:@"dove-good-3"] ];
+        NSArray *images = @[ [UIImage imageNamed:@"good-dove"], [UIImage imageNamed:@"dove-good-2"], [UIImage imageNamed:@"dove-good-3"] ];
         for (int i = 0 ; i < 3; i++) {
             x = tileWidth * i;
         
@@ -56,7 +56,7 @@
         
         CGFloat badY = bottomLabelFrame.origin.y + labelHeight + padding;
         CGFloat largePadding = 40.0f;
-        NSArray *badImages = @[ [UIImage imageNamed:@"dove-bad-1"], [UIImage imageNamed:@"dove-bad-2"] ];
+        NSArray *badImages = @[ [UIImage imageNamed:@"bad-emmie"], [UIImage imageNamed:@"bad-joey"] ];
         for (int i = 0; i < 2; i++) {
             CGFloat badX = largePadding + largePadding * i + tileWidth * i;
             DOVETileView *tileView = [[DOVETileView alloc] initWithFrame:CGRectMake(badX, badY, tileWidth, tileWidth)];

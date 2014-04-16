@@ -13,6 +13,7 @@
 }
 
 @property (nonatomic, assign) BOOL gameOver;
+@property (nonatomic, assign) BOOL paused;
 @property (nonatomic, assign) NSInteger duration;
 @property (nonatomic, copy) NSArray *nodes;
 
@@ -25,6 +26,7 @@
     self = [super initWithSize:size];
     if (self) {
         self.gameOver = NO;
+        self.paused = YES; 
         self.userData = [NSMutableDictionary dictionary];
         [self registerNotifications];
         secondsCount = 1800;
@@ -41,7 +43,7 @@
 
 - (void)generateRandomNode
 {
-    if (!self.gameOver) {
+    if (!self.gameOver || !self.paused) {
         self.nodes = [self allNodes];
         NSUInteger randomNumber = arc4random() % self.nodes.count;
         self.imageNode = [self.nodes objectAtIndex:randomNumber];
@@ -85,7 +87,7 @@
 {
     NSMutableArray *nodes = [NSMutableArray array];
     
-    SKSpriteNode *goodNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-good-1"];
+    SKSpriteNode *goodNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"good-dove"];
     goodNode1.name = @"good";
     [nodes addObject:goodNode1];
     
@@ -97,17 +99,13 @@
     goodNode3.name = @"good";
     [nodes addObject:goodNode3];
     
-    SKSpriteNode *badNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-bad-1"];
+    SKSpriteNode *badNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"bad-emmie"];
     badNode1.name = @"bad";
     [nodes addObject:badNode1];
     
-    SKSpriteNode *badNode2 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-bad-2"];
+    SKSpriteNode *badNode2 = [SKSpriteNode spriteNodeWithImageNamed:@"bad-joey"];
     badNode2.name = @"bad";
     [nodes addObject:badNode2];
-    
-    SKSpriteNode *badNode3 = [SKSpriteNode spriteNodeWithImageNamed:@"dove-bad-3"];
-    badNode3.name = @"bad";
-    [nodes addObject:badNode3];
     
     SKSpriteNode *nothingNode1 = [SKSpriteNode spriteNodeWithImageNamed:@"nothing"];
     nothingNode1.name = @"nothing";

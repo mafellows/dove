@@ -20,3 +20,5 @@
 #define kResetGame @"resetGame"
 #define kHighScore @"highScore"
 #define kDuration @"duration"
+#define kPauseGame @"pause"
+#define kResumeGame @"resume"

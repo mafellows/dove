@@ -85,9 +85,28 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:kRemoveLife
                                                   object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(removeLife:)
                                                  name:kRemoveLife
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kPauseGame
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pauseGame:)
+                                                 name:kPauseGame
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kResumeGame
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(resumeGame:)
+                                                 name:kResumeGame
                                                object:nil];
 }
 
@@ -226,6 +245,16 @@
         duration -= 0.2;
         [[NSUserDefaults standardUserDefaults] setFloat:duration forKey:kDuration];
     }
+}
+
+- (void)pauseGame:(NSNotification *)notification
+{
+    
+}
+
+- (void)resumeGame:(NSNotification *)notification
+{
+    
 }
 
 @end
