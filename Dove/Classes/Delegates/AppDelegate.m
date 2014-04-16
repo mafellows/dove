@@ -33,7 +33,7 @@
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [UITabBar appearance].tintColor = [UIColor purpleColor];
-    tabBarController.viewControllers = @[ gameNav, photoNav, instagramNav, twitterNav ];
+    tabBarController.viewControllers = @[ photoNav, gameNav, instagramNav, twitterNav ];
     self.window.rootViewController = tabBarController; 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

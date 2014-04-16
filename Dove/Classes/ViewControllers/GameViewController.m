@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "AchievementViewController.h"
+#import "DOVEInstructionsViewController.h"
 #import "DOVETileView.h"
 #import "DOVEScene.h"
 #import "ResetView.h"
@@ -40,12 +41,19 @@
         
         _padding = 10.0f;
         self.navigationItem.title = @"Dove Dove Tap";
-        self.tabBarItem.image = [UIImage imageNamed:@"game"];
+        self.tabBarItem.image = [UIImage imageNamed:@"trophy-tab"]; 
         UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"trophy"]
                                                                            style:UIBarButtonItemStylePlain
                                                                           target:self
                                                                           action:@selector(showAchievements:)];
         self.navigationItem.rightBarButtonItem = rightBarButton;
+        
+        UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"_info"]
+                                                                          style:UIBarButtonItemStylePlain
+                                                                         target:self
+                                                                         action:@selector(showInstructions:)];
+        self.navigationItem.leftBarButtonItem = leftBarButton;
+        
     }
     return self;
 }
@@ -88,7 +96,7 @@
 - (void)setUpTimer
 {
     secondsCount = 1800;
-    [NSTimer scheduledTimerWithTimeInterval:10.0
+    [NSTimer scheduledTimerWithTimeInterval:20.0
                                      target:self
                                    selector:@selector(runTimer:)
                                    userInfo:nil
@@ -156,6 +164,12 @@
                      completion:nil];
 }
 
+- (void)showInstructions:(id)sender
+{
+    DOVEInstructionsViewController *instructionsVC = [[DOVEInstructionsViewController alloc] init];
+    [self presentViewController:instructionsVC animated:YES completion:nil]; 
+}
+
 - (void)incrementScore:(NSNotification *)notification
 {
     if ([[notification name] isEqualToString:kIncrementScore]) {
@@ -205,7 +219,7 @@
 
 - (void)runTimer:(NSTimer *)timer
 {
-    secondsCount -= 10;
+    secondsCount -= 20;
     CGFloat duration = [[NSUserDefaults standardUserDefaults] floatForKey:kDuration];
     NSLog(@"%f", duration);
     if (duration > 0.2) {
