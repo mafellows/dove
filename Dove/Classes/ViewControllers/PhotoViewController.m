@@ -35,7 +35,7 @@
                          [UIImage imageNamed:@"dove-friend-beach"],
                          [UIImage imageNamed:@"dove-man"]];
         
-        self.captions = @[ @"Love friends and doubles :)",
+        self.captions = @[ @"Love my friends Liv 2 and Maddie 2 :)",
                            @"Check out this new scene!",
                            @"Love of my life",
                            @"Amazing opening night with an amazing guy :)",
@@ -51,7 +51,6 @@
 - (void)loadView
 {
     UIView *backgroundView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
     self.view = backgroundView;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -92,7 +91,6 @@
     
     PinItem *item = [[PinItem alloc] initWithImage:[self.images objectAtIndex:indexPath.row]
                                            caption:[self.captions objectAtIndex:indexPath.row]];
-    
     cell.imageView.image = item.image;
     cell.label.text = item.caption; 
     
