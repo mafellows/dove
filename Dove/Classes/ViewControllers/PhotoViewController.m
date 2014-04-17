@@ -31,12 +31,16 @@
         self.images = @[ [UIImage imageNamed:@"dove-board-emmy"],
                          [UIImage imageNamed:@"dove-family"],
                          [UIImage imageNamed:@"dove-board-man"],
-                         [UIImage imageNamed:@"dove-board-ryan"] ];
+                         [UIImage imageNamed:@"dove-board-ryan"],
+                         [UIImage imageNamed:@"dove-friend-beach"],
+                         [UIImage imageNamed:@"dove-man"]];
         
         self.captions = @[ @"Love friends and doubles :)",
                            @"Check out this new scene!",
                            @"Love of my life",
-                           @"Amazing opening night with an amazing guy :)" ];
+                           @"Amazing opening night with an amazing guy :)",
+                           @"Let's go to the beach!",
+                           @"My man :)" ];
         
         self.navigationItem.title = @"Dove's Pin Board"; 
     }
